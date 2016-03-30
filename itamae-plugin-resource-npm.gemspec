@@ -5,7 +5,7 @@ require 'itamae/plugin/resource/npm/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "itamae-plugin-resource-npm"
-  spec.version       = Itamae::Plugin::Resource::Npm::VERSION
+  spec.version       = "0.0.2"
   spec.authors       = ["timakin"]
   spec.email         = ["timaki.st@gmail.com"]
 
