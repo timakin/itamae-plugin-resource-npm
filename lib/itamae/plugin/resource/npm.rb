@@ -27,7 +27,7 @@ module Itamae
         
         def check_npm_availability
           if run_command("which npm", error: false).exit_status != 0
-            raise "`npm` command is not available. Please install ghq."
+            raise "`npm` command is not available. Please install node of the latest version."
           end
         end
         
