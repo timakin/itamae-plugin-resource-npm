@@ -10,6 +10,7 @@ module Itamae
         define_attribute :version, type: String
 
         def set_current_attributes
+          root_local_node_modules_dir
           check_npm_availability
           check_remote_package_existance
        
@@ -25,6 +26,10 @@ module Itamae
         
         private
         
+        def root_local_node_modules_dir
+          run_command("sudo chown -R $(whoami) $(npm config get prefix)/{lib/node_modules,bin,share}")
+        end
+
         def check_npm_availability
           if run_command("which npm", error: false).exit_status != 0
             raise "`npm` command is not available. Please install node of the latest version."
