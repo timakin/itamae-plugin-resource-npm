@@ -37,7 +37,7 @@ module Itamae
         end
         
         def check_global_package_existance
-          run_command(["npm", "list" "-g", attributes.package_name], error: false)
+          run_command(["npm", "list", "-g", attributes.package_name], error: false)
         end
         
         def check_remote_package_existance
