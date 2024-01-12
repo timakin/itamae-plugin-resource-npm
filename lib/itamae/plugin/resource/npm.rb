@@ -41,7 +41,7 @@ module Itamae
         end
         
         def check_remote_package_existance
-          if run_command(["npm", "s", attributes.package_name]).stdout.split.match(/No match found/)
+          if run_command(["npm", "s", attributes.package_name]).stdout.include?('No match found')
             raise "Specified package is not found. Confirm the package name or existance."
           end
         end
