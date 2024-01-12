@@ -8,9 +8,10 @@ module Itamae
         define_attribute :action, default: :install
         define_attribute :package_name, type: String, default_name: true
         define_attribute :version, type: String
+        define_attribute :chown_node_modules, default: true
 
         def set_current_attributes
-          root_local_node_modules_dir
+          root_local_node_modules_dir if attributes.chown_node_modules
           check_npm_availability
           check_remote_package_existance
        
